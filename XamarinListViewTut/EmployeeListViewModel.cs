@@ -14,7 +14,6 @@ namespace XamarinListViewTut
         public EmployeeListViewModel()
         {
             
-
             string[] arrEmployees = new string[] { "batman", "superman", "wonderwoman" };
             Employees = arrEmployees;
         }
