@@ -17,25 +17,29 @@ namespace XamarinListViewTut
 
         public ObservableCollection<string> Employees { get; set; }
         
-        public string EmployeeName { get; set; }
 
+        public string EmployeeName { get; set; }
+        
         public string SelectedEmployee { get; set; }
+        
+                 
 
         public EmployeeListViewModel()
         {
-
-
 
             //string[] arrEmployees = new string[] { "batman", "superman", "wonderwoman" }; (sådan havde den normalt set ud hvis vi ikke brugte observablecollection)
             Employees = new ObservableCollection<string>();
             Employees.Add("batman");
             Employees.Add("wonderwoman");
             Employees.Add("superman");
+
+
         }
 
         public void AddEmployee()
         {
             Employees.Add(EmployeeName);
+            
         }
 
         public void RemoveEmployee()
