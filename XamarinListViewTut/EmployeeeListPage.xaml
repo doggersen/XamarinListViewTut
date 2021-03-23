@@ -9,7 +9,13 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="lvEmployees" ItemsSource="{Binding Employees}">
+
+            <Entry Placeholder="Employee Name" Text="{Binding EmployeeName}"></Entry>
+            <Button Text="Add" Command="{Binding AddEmployeeCommand}"></Button>
+            <Button Text="Remove" Command="{Binding RemoveEmployeeCommand}"></Button>
+            <Button Text="Update" Command="{Binding UpdateEmployeeCommand}"></Button>
+            
+            <ListView x:Name="lvEmployees" ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}" >
                 
             </ListView>
         </StackLayout>
