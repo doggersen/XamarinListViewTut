@@ -1,12 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:XamarinListViewTut"
              x:Class="XamarinListViewTut.PlayerListPage">
+
+
+    <ContentPage.BindingContext>
+        <local:PlayerListViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Entry Placeholder="Player name" Text="{Binding PlayerName}"></Entry>
+            
+            <Button Text="Add" Command="{Binding AddPlayerCommand}"></Button>
+            <Button Text="Remove" Command="{Binding RemovePlayerCommand}"></Button>
+            <Button Text="Update" Command="{Binding UpdatePlayerCommand}"></Button>
+            <Button Text="click to show ur fucking civil status" Command="{Binding ShowCivilStatusCommand}"></Button>                
+
+            <Label x:Name="myLabel" Text="{Binding civilStatus}"></Label>
+            
+
+                <ListView x:Name="lvPlayers" ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}" >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                                <Label  Text="{Binding PlayerName }" VerticalOptions="Center"  Grid.Column="0"  />
+
+                            
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+            
+            
+            
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

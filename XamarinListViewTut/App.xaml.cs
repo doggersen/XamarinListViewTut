@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace XamarinListViewTut
 {
@@ -11,7 +9,8 @@ namespace XamarinListViewTut
             InitializeComponent();
 
             //MainPage = new MainPage();
-            MainPage = new XamarinListViewTut.EmployeeeListPage();
+            //MainPage = new XamarinListViewTut.EmployeeeListPage();
+            MainPage = new XamarinListViewTut.PlayerListPage();
         }
 
         protected override void OnStart()

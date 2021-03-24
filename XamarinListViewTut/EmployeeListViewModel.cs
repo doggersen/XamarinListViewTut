@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
-using System.Collections.ObjectModel;
+using Xamarin.Forms;
 
 namespace XamarinListViewTut
 
@@ -16,13 +13,13 @@ namespace XamarinListViewTut
 
 
         public ObservableCollection<string> Employees { get; set; }
-        
+
 
         public string EmployeeName { get; set; }
-        
+
         public string SelectedEmployee { get; set; }
-        
-                 
+
+
 
         public EmployeeListViewModel()
         {
@@ -39,7 +36,7 @@ namespace XamarinListViewTut
         public void AddEmployee()
         {
             Employees.Add(EmployeeName);
-            
+
         }
 
         public void RemoveEmployee()
@@ -56,7 +53,7 @@ namespace XamarinListViewTut
             Employees.Add(EmployeeName);
             int oldIndex = Employees.IndexOf(EmployeeName);
 
-            Employees.Move(oldIndex, newIndex); 
+            Employees.Move(oldIndex, newIndex);
 
         }
 

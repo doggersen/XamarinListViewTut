@@ -17,9 +17,6 @@
             
             <ListView x:Name="lvEmployees" ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}" ></ListView>
 
-            <Entry Text="A new more advanced list"></Entry>
-
-            <ListView x:Name="lvPlayers" ItemsSource="{Binding }" SelectedItem="{Binding SelectedEmployee}" ></ListView>
 
 
         </StackLayout>

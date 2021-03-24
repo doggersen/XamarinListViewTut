@@ -1,61 +1,90 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
-using System.Collections.ObjectModel;
+using Xamarin.Forms;
 
 namespace XamarinListViewTut
 {
-    class PlayerListViewModel
+
+
+
+    class PlayerListViewModel : BaseViewModel
     {
-        public ICommand AddEmployeeCommand => new Command(AddPlayer);
-        public ICommand RemoveEmployeeCommand => new Command(RemovePlayer);
-        public ICommand UpdateEmployeeCommand => new Command(UpdatePlayer);
+        public ICommand AddPlayerCommand => new Command(AddPlayer);
+        public ICommand RemovePlayerCommand => new Command(RemovePlayer);
+        public ICommand UpdatePlayerCommand => new Command(UpdatePlayer);
+        public ICommand ShowCivilStatusCommand => new Command(ShowCivilStatus);
+
+        public class PlayerData
+        {
+            public string PlayerName { get; set; }
+            public string CivilStatus { get; set; }
+            
+        }
 
 
-        public ObservableCollection<string> Players { get; set; }
+
+        public ObservableCollection<PlayerData> Players { get; set; }
 
 
-        public string PlayerName { get; set; }
-        public string SelectedEmployee { get; set; }
-        public string SelectedPlayer { get; set; }
+        //public string PlayerName { get; set; }
 
+        public PlayerData SelectedPlayer { get; set; }
 
-
+        public string civilStatus
+        {
+            get { return civilStatus; }
+            set { OnPropertyChanged(nameof(civilStatus)); }
+        }
         public PlayerListViewModel()
         {
 
             //string[] arrEmployees = new string[] { "batman", "superman", "wonderwoman" }; (sådan havde den normalt set ud hvis vi ikke brugte observablecollection)
-            Players = new ObservableCollection<string>();
-            Players.Add("Martin");
-            Players.Add("Cherryl");
-            Players.Add("Jimmy");
+            Players = new ObservableCollection<PlayerData>();
+            PlayerData martin = new PlayerData();
+            PlayerData cherryl = new PlayerData();
+            PlayerData jimmy = new PlayerData();
+            martin.CivilStatus = "married";
+            cherryl.CivilStatus = "also married";
+            jimmy.CivilStatus = "single";
+            cherryl.PlayerName = "Cherryl";
+            jimmy.PlayerName = "jimmy";
+            martin.PlayerName = "martin";
+            Players.Add(cherryl);
+            Players.Add(martin);
+            Players.Add(jimmy);
 
+
+
+        }
+
+        public void ShowCivilStatus()
+        {
+            
+            civilStatus = SelectedPlayer.CivilStatus;
 
         }
 
         public void AddPlayer()
         {
-            Players.Add(PlayerName);
+            //  Players.Add(PlayerName);
 
         }
 
         public void RemovePlayer()
         {
-            Players.Remove(SelectedEmployee);
+            Players.Remove(SelectedPlayer);
         }
 
         public void UpdatePlayer()
         {
 
-            int newIndex = Players.IndexOf(SelectedEmployee);
-            Players.Remove(SelectedEmployee);
+            //int newIndex = Players.IndexOf(SelectedPlayer);
+            //Players.Remove(SelectedPlayer);
 
-            Players.Add(PlayerName);
-            int oldIndex = Players.IndexOf(PlayerName);
+            // Players.Add(PlayerName);
+            //            int oldIndex = Players.IndexOf(PlayerName);
 
-            Players.Move(oldIndex, newIndex);
+            //          Players.Move(oldIndex, newIndex);
 
         }
     }
