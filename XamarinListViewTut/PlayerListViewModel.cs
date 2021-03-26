@@ -26,14 +26,20 @@ namespace XamarinListViewTut
         public ObservableCollection<PlayerData> Players { get; set; }
 
 
-        //public string PlayerName { get; set; }
+        public string PlayerName { get; set; }
 
         public PlayerData SelectedPlayer { get; set; }
 
-        public string civilStatus
+        public string CivilStatus
         {
-            get { return civilStatus; }
-            set { OnPropertyChanged(nameof(civilStatus)); }
+           get; set;
+           // get { return CivilStatus; }
+           // set
+           // {
+            //   CivilStatus = value;
+                //OnPropertyChanged(nameof(CivilStatus)); 
+            //    OnPropertyChanged();
+            //}
         }
         public PlayerListViewModel()
         {
@@ -60,7 +66,7 @@ namespace XamarinListViewTut
         public void ShowCivilStatus()
         {
             
-            civilStatus = SelectedPlayer.CivilStatus;
+            CivilStatus = SelectedPlayer.CivilStatus;
 
         }
 
