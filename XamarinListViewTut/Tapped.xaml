@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:XamarinListViewTut="clr-namespace:XamarinListViewTut"
+            x:Class="XamarinListViewTut.Tapped">
+  <!--Pages can be added as references or inline-->
+  <!--<ContentPage Title="Tab 1" />
+  <ContentPage Title="Tab 2" />
+  <ContentPage Title="Tab 3" />-->
+
+    <XamarinListViewTut:EmployeeeListPage Title="Employeee"></XamarinListViewTut:EmployeeeListPage>
+    <XamarinListViewTut:PlayerListPage Title="Player"></XamarinListViewTut:PlayerListPage>
+    
+    
+    
+    
+    
+    
+    
+</TabbedPage>
