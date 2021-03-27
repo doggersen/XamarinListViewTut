@@ -18,7 +18,7 @@ namespace XamarinListViewTut
         {
             public string PlayerName { get; set; }
             public string CivilStatus { get; set; }
-            
+
         }
 
 
@@ -32,12 +32,12 @@ namespace XamarinListViewTut
 
         public string CivilStatus
         {
-           get; set;
-           // get { return CivilStatus; }
-           // set
-           // {
+            get; set;
+            // get { return CivilStatus; }
+            // set
+            // {
             //   CivilStatus = value;
-                //OnPropertyChanged(nameof(CivilStatus)); 
+            //OnPropertyChanged(nameof(CivilStatus)); 
             //    OnPropertyChanged();
             //}
         }
@@ -65,7 +65,7 @@ namespace XamarinListViewTut
 
         public void ShowCivilStatus()
         {
-            
+
             CivilStatus = SelectedPlayer.CivilStatus;
 
         }

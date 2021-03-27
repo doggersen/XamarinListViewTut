@@ -7,7 +7,7 @@ namespace XamarinListViewTut
         public App()
         {
             InitializeComponent();
-            MainPage = new Tapped();
+            MainPage = new Tabbed();
             //MainPage = new MainPage();
             //MainPage = new XamarinListViewTut.EmployeeeListPage();
             //MainPage = new XamarinListViewTut.PlayerListPage();
