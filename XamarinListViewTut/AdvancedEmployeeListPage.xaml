@@ -4,21 +4,36 @@
              x:Class="XamarinListViewTut.AdvancedEmployeeListPage">
 
 
+    <!--to be able to bind from the xaml-page to a class, you need to make a BindingContext that points to the name of the class-->
     <ContentPage.BindingContext>
         <local:AdvancedEmployeeListViewModel/>
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout>
-
-            <Button Text="Add" ></Button>
+        <StackLayout> 
 
             <!--<Entry Placeholder="Employee Name" Text="{Binding EmployeeName}"></Entry>
             <Button Text="Add" Command="{Binding AddEmployeeCommand}"></Button>
             <Button Text="Remove" Command="{Binding RemoveEmployeeCommand}"></Button>
             <Button Text="Update" Command="{Binding UpdateEmployeeCommand}"></Button>-->
 
-            <ListView x:Name="lvEmployees" ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}" ></ListView>
+            <ListView ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                            <Label Text="{Binding EmployeeName}"
+                                FontSize="Medium"
+                                   FontAttributes="Bold">
+                                
+                            </Label>
+                            <Label Text="{Binding Designation}" Grid.Column="0" VerticalTextAlignment="End"></Label>
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
         </StackLayout>
     </ContentPage.Content>
