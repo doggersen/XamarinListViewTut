@@ -18,7 +18,7 @@
             <Button Text="Remove" Command="{Binding RemoveEmployeeCommand}"></Button>
             <Button Text="Update" Command="{Binding UpdateEmployeeCommand}"></Button>-->
 
-            <!--<ListView x:Name="lvEmployees" ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}" ></ListView>-->
+            <ListView x:Name="lvEmployees" ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}" ></ListView>
 
         </StackLayout>
     </ContentPage.Content>
