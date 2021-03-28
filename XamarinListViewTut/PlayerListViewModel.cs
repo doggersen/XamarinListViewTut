@@ -7,7 +7,7 @@ namespace XamarinListViewTut
 
 
 
-    class PlayerListViewModel : BaseViewModel
+    class PlayerListViewModel //: BaseViewModel
     {
         public ICommand AddPlayerCommand => new Command(AddPlayer);
         public ICommand RemovePlayerCommand => new Command(RemovePlayer);
@@ -59,7 +59,10 @@ namespace XamarinListViewTut
             Players.Add(martin);
             Players.Add(jimmy);
 
-
+            PlayerData testPlayer = new PlayerData();
+            testPlayer.PlayerName = "Johannes";
+            testPlayer.CivilStatus = "single";
+            Players.Add(testPlayer);
 
         }
 

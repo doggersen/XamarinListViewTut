@@ -9,7 +9,7 @@
 
     <XamarinListViewTut:EmployeeeListPage Title="Employeee"></XamarinListViewTut:EmployeeeListPage>
     <XamarinListViewTut:PlayerListPage Title="Player"></XamarinListViewTut:PlayerListPage>
-    
+    <XamarinListViewTut:AdvancedEmployeeListPage Title="advanced employee"></XamarinListViewTut:AdvancedEmployeeListPage>
     
     
     
