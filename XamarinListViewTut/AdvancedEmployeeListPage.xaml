@@ -22,11 +22,16 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
-                            <Label Text="{Binding EmployeeName}"
+                                <Image Source="{Binding PictureUrl}"></Image>
+                                <Label Text="{Binding EmployeeName}"
                                 FontSize="Medium"
-                                   FontAttributes="Bold">
-                                
-                            </Label>
+                                   FontAttributes="Bold"
+                                   Grid.Column="0"
+                                   VerticalTextAlignment="Start">
+
+
+
+                                </Label>
                             <Label Text="{Binding Designation}" Grid.Column="0" VerticalTextAlignment="End"></Label>
                             </Grid>
 
