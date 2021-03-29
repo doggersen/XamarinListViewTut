@@ -14,7 +14,7 @@
 
             <!--<Entry Placeholder="Employee Name" Text="{Binding EmployeeName}"></Entry>
             <Button Text="Add" Command="{Binding AddEmployeeCommand}"></Button>
-            <Button Text="Remove" Command="{Binding RemoveEmployeeCommand}"></Button>
+            <Button Text="Remove" Command="{Binding RemoveEmployeeCommand}"></Button    >
             <Button Text="Update" Command="{Binding UpdateEmployeeCommand}"></Button>-->
 
             <ListView ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}" >
@@ -22,7 +22,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
-                                <Image Source="{Binding PictureUrl}"></Image>
+                                <Image Source="{Binding PictureUrl}" Grid.Column="1"></Image>
                                 <Label Text="{Binding EmployeeName}"
                                 FontSize="Medium"
                                    FontAttributes="Bold"
@@ -32,7 +32,8 @@
 
 
                                 </Label>
-                            <Label Text="{Binding Designation}" Grid.Column="0" VerticalTextAlignment="End"></Label>
+                                <Label Text="{Binding EmployeeId }" Grid.Column="2 " VerticalTextAlignment="End"></Label>
+                                <Label Text="{Binding Designation}" Grid.Column="0" VerticalTextAlignment="End"></Label>
                             </Grid>
 
                         </ViewCell>
