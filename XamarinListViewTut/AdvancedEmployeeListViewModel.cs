@@ -33,12 +33,12 @@ namespace XamarinListViewTut
             //Employees.Add("wonderwoman");
             //Employees.Add("superman");
 
-            Employees.Add(new Employee(1, "Finn Hansen", "Infrastructure", "img1.jpg"));
-            Employees.Add(new Employee(2, "Tom Cruise", "Fliselægger", "img2.jpg"));
-            Employees.Add(new Employee(3, "Pia Poulsen", "Administrationen", "img3.jpg"));
-            Employees.Add(new Employee(4, "Martin", "Lærling", "img4.jpg"));
-            Employees.Add(new Employee(5, "Ole B", "Bossen", "img5.jpg"));
-            Employees.Add(new Employee(6, "Jørgen Mondrup", "Infrastructure", "img6.jpg"));
+            Employees.Add(new Employee(1, "Finn Hansen", "Infrastructure", "img1.jpg", "single"));
+            Employees.Add(new Employee(2, "Tom Cruise", "Fliselægger", "img2.jpg", "married"));
+            Employees.Add(new Employee(3, "Pia Poulsen", "Administrationen", "img3.jpg", "single"));
+            Employees.Add(new Employee(4, "Martin", "Lærling", "img4.jpg", "single"));
+            Employees.Add(new Employee(5, "Ole B", "Bossen", "img5.jpg", "single"));
+            Employees.Add(new Employee(6, "Jørgen Mondrup", "Infrastructure", "img6.jpg", "married"));
 
         }
 
