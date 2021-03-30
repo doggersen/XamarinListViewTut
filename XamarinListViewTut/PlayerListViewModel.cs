@@ -7,7 +7,7 @@ namespace XamarinListViewTut
 
 
 
-    class PlayerListViewModel //: BaseViewModel
+    class PlayerListViewModel : BaseViewModel
     {
         public ICommand AddPlayerCommand => new Command(AddPlayer);
         public ICommand RemovePlayerCommand => new Command(RemovePlayer);
@@ -30,16 +30,15 @@ namespace XamarinListViewTut
 
         public PlayerData SelectedPlayer { get; set; }
 
+        private string _civilStatus;
         public string CivilStatus
         {
-            get; set;
-            // get { return CivilStatus; }
-            // set
-            // {
-            //   CivilStatus = value;
-            //OnPropertyChanged(nameof(CivilStatus)); 
-            //    OnPropertyChanged();
-            //}
+            get { return _civilStatus; }
+            set
+            {
+                _civilStatus = value;
+                OnPropertyChanged();
+            }
         }
         public PlayerListViewModel()
         {

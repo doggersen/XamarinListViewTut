@@ -11,7 +11,7 @@
     <XamarinListViewTut:PlayerListPage Title="Player"></XamarinListViewTut:PlayerListPage>
     <XamarinListViewTut:AdvancedEmployeeListPage Title="advanced employee"></XamarinListViewTut:AdvancedEmployeeListPage>
     <XamarinListViewTut:MainPage Title="cherryls test"></XamarinListViewTut:MainPage>
-
+    <XamarinListViewTut:EnrollStudentPage Title="Enroll"></XamarinListViewTut:EnrollStudentPage>
 
 
 

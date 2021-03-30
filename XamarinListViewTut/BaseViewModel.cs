@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace XamarinListViewTut
 {
@@ -6,10 +7,18 @@ namespace XamarinListViewTut
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged(string propertyname)
+        protected void OnPropertyChanged([CallerMemberName] string Name = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(Name));
         }
+
+
+        //public event PropertyChangedEventHandler PropertyChanged;
+
+        //public void OnPropertyChanged(string propertyname)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
+        //}
 
     }
 }

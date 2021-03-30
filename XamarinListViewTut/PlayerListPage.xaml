@@ -17,7 +17,7 @@
             <Button Text="Update" Command="{Binding UpdatePlayerCommand}"></Button>
             <Button Text="click to show ur fucking civil status" Command="{Binding ShowCivilStatusCommand}"></Button>                
 
-            <Label x:Name="myLabel" Text="{Binding civilStatus}"></Label>
+            <Label x:Name="myLabel" Text="{Binding CivilStatus}"></Label>
             
 
                 <ListView x:Name="lvPlayers" ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}" >
