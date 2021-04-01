@@ -1,12 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:XamarinListViewTut.Model"
              x:Class="XamarinListViewTut.View.FormlerView">
+
+    <ContentPage.BindingContext>
+        <local:FormelBeregnerModel/>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Vælg en fase!" FontSize="Large"></Label>
+
+            <Button Text="Fase 1" Command="{Binding FormelFase1Command, Mode=TwoWay}" ></Button>
+            <Button Text="Fase 2"></Button>
+            <Button Text="Fase 3"></Button>
+            
+            <Label Text="input for X"></Label>
+            <Entry Text="2"></Entry>
+            <Label Text="input for Y"></Label>
+            <Entry Text=""></Entry>
+
+            <Label Text="{Binding DisplayMessage, Mode=TwoWay}" ></Label>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

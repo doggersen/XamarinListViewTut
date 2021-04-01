@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:XamarinListViewTut="clr-namespace:XamarinListViewTut"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:XamarinListViewTut="clr-namespace:XamarinListViewTut" xmlns:XamarinListViewTut1="clr-namespace:XamarinListViewTut.View"
             x:Class="XamarinListViewTut.Tabbed">
   <!--Pages can be added as references or inline-->
   <!--<ContentPage Title="Tab 1" />
@@ -9,10 +9,10 @@
 
     <XamarinListViewTut:EmployeeeListPage Title="Employeee"></XamarinListViewTut:EmployeeeListPage>
     <XamarinListViewTut:PlayerListPage Title="Player"></XamarinListViewTut:PlayerListPage>
-    <XamarinListViewTut:AdvancedEmployeeListPage Title="advanced employee"></XamarinListViewTut:AdvancedEmployeeListPage>
-    <XamarinListViewTut:MainPage Title="cherryls test"></XamarinListViewTut:MainPage>
+    <XamarinListViewTut:AdvancedEmployeeListPage Title="Employee2.0"></XamarinListViewTut:AdvancedEmployeeListPage>
+    <XamarinListViewTut:MainPage Title="cherryl"></XamarinListViewTut:MainPage>
     <XamarinListViewTut:EnrollStudentPage Title="Enroll"></XamarinListViewTut:EnrollStudentPage>
-    
+    <XamarinListViewTut1:FormlerView Title="Formler"></XamarinListViewTut1:FormlerView>
 
 
 
