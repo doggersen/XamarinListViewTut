@@ -11,21 +11,7 @@ namespace XamarinListViewTut.Model
         public ICommand FormelFase1Command => new Command(FormelFase1);
         public ICommand FormelFase2Command => new Command(FormelFase2);
         public ICommand FormelFase3Command => new Command(FormelFase3);
-        public ICommand DisplayResultCommand => new Command(DisplayResult);
-
-
-
-        private string _formel;
-        public string Formel
-        {
-            get { return _formel; }
-            set
-            {
-                _formel = value;
-                OnPropertyChanged();
-            }
-        }
-
+        
         private string _udfyldtFormel;
         public string UdfyldtFormel
         {
@@ -68,45 +54,42 @@ namespace XamarinListViewTut.Model
                 OnPropertyChanged();
             }
         }
-
-        private string _displayMessage;
-        public string DisplayMessage
+        
+        private string _visResultat;
+        public string VisResultat
         {
-            get { return _displayMessage; }
+            get { return _visResultat; }
             set
             {
-                _displayMessage = value;
+                _visResultat = value;
                 OnPropertyChanged();
             }
         }
 
-        public void DisplayResult()        
+        public void KaldVisResultat()        
         {
-            DisplayMessage = $"{UdfyldtFormel} = {Resultat}";             
+            VisResultat = $"{UdfyldtFormel} = {Resultat}";             
         }
 
         public void FormelFase1()
         {         
-            Formel = "(5 + X) / Y";
-            UdfyldtFormel = $"(5 + {InputX} / {InputY}";
+            UdfyldtFormel = $"(5 + {InputX}) / {InputY}";
             Resultat = (5 + Convert.ToDouble(InputX)) / Convert.ToDouble(InputY);
-            DisplayResult();
+            KaldVisResultat();
         }
 
         public void FormelFase2()
         {
-            Formel = "PI * X + Y";
-            UdfyldtFormel = $"(PI * {InputX} + {InputY}";
+            UdfyldtFormel = $"PI * {InputX} + {InputY}";
             Resultat = (Math.PI * Convert.ToDouble(InputX)) + Convert.ToDouble(InputY);
-            DisplayResult();
+            KaldVisResultat();
         }
 
         public void FormelFase3()
         {
-            Formel = "X opløftet til Y potens";
             UdfyldtFormel = $"{InputX} opløftet til {InputY}. potens";
             Resultat = Math.Pow((Convert.ToDouble(InputX)), Convert.ToDouble(InputY));
-            DisplayResult();
+            KaldVisResultat();
         }
     }
 }

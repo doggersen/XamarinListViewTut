@@ -7,12 +7,13 @@
   <ContentPage Title="Tab 2" />
   <ContentPage Title="Tab 3" />-->
 
+    <XamarinListViewTut1:FormlerView Title="Formler"></XamarinListViewTut1:FormlerView>
     <XamarinListViewTut:EmployeeeListPage Title="Employeee"></XamarinListViewTut:EmployeeeListPage>
     <XamarinListViewTut:PlayerListPage Title="Player"></XamarinListViewTut:PlayerListPage>
     <XamarinListViewTut:AdvancedEmployeeListPage Title="Employee2.0"></XamarinListViewTut:AdvancedEmployeeListPage>
     <XamarinListViewTut:MainPage Title="cherryl"></XamarinListViewTut:MainPage>
     <XamarinListViewTut:EnrollStudentPage Title="Enroll"></XamarinListViewTut:EnrollStudentPage>
-    <XamarinListViewTut1:FormlerView Title="Formler"></XamarinListViewTut1:FormlerView>
+    
 
 
 
