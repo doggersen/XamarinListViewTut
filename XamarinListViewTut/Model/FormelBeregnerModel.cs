@@ -58,7 +58,16 @@ namespace XamarinListViewTut.Model
                 OnPropertyChanged();
             }
         }
-        public double Resultat { get; set; }
+        private double _resultat;
+        public double Resultat
+        {
+            get { return _resultat; }
+            set
+            {
+                _resultat = value;
+                OnPropertyChanged();
+            }
+        }
 
         private string _displayMessage;
         public string DisplayMessage
@@ -73,6 +82,7 @@ namespace XamarinListViewTut.Model
 
         public void DisplayResult()        
         {
+            FormelFase1();
             DisplayMessage = $"{UdfyldtFormel} = {Resultat}";   //$"Formel : {Formel} inputtet af x : {InputX}"
             //                        + $"Resultat : {Resultat.ToString()}";
         }
@@ -82,8 +92,8 @@ namespace XamarinListViewTut.Model
             
             Formel = "(5 + X) / Y";
             UdfyldtFormel = $"(5 + {InputX} / {InputY}";
-            Resultat = (5 + Convert.ToDouble(InputX)) / InputY;
-            DisplayResult();
+            Resultat = (5 + Convert.ToDouble(InputX)) / Convert.ToDouble(InputY);
+           // DisplayResult();
         }
 
         public void FormelFase2()

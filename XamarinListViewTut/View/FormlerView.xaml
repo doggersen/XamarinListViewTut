@@ -12,9 +12,9 @@
             <Label Text="Vælg en fase!" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"></Label>
 
             <Button Text="Fase 1" Command="{Binding FormelFase1Command}" ></Button>
-            <Button Text="Fase 2"></Button>
-            <Button Text="Fase 3"></Button>
-
+            <Button Text="Fase 1" Command="{Binding FormelFase2Command}" ></Button>
+            <Button Text="Fase 1" Command="{Binding FormelFase3Command}" ></Button>
+            
             <Label Text="Den valgt Fase:" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
             <Label Text="{Binding Formel}" FontSize="Large" HorizontalTextAlignment="Center"></Label>
 
@@ -28,16 +28,15 @@
                     <ColumnDefinition Width="3*" />
                     
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Text="Input for X = " FontAttributes="Bold" FontSize="Medium"/>
-                <Label Grid.Row="1" Grid.Column="0" Text="Input for Y = " FontAttributes="Bold" FontSize="Medium"/>
-                <Label Grid.Row="0" Grid.Column="1" Text="{Binding InputX}" FontAttributes="Bold" FontSize="Medium" BackgroundColor="AntiqueWhite"/>
-                <Label Grid.Row="1" Grid.Column="1" Text="{Binding InputY}" FontAttributes="Bold" FontSize="Medium" BackgroundColor="AntiqueWhite"/>
+                <Label Grid.Row="0" Grid.Column="0" Text="Input for X = " VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Input for Y = " VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"/>
+                <Entry Grid.Row="0" Grid.Column="1" Text="{Binding InputX, Mode=TwoWay}" FontAttributes="Bold" FontSize="Medium" BackgroundColor="AntiqueWhite"/>
+                <Entry Grid.Row="1" Grid.Column="1" Text="{Binding InputY, Mode=TwoWay}" FontAttributes="Bold" FontSize="Medium" BackgroundColor="AntiqueWhite"/>
                 
             </Grid>
 
-
-            <Button Text="Vis resultat!"></Button>
-            <Label Text="Resultat skal stå her"></Label>            
+            <Button Text="Vis resultat" Command="{Binding DisplayResultCommand}" ></Button>
+            <Label Text="{Binding DisplayMessage, Mode=TwoWay}"></Label>            
             
             
         </StackLayout>
