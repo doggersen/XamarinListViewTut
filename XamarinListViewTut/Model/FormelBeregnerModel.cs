@@ -6,8 +6,13 @@ using Xamarin.Forms;
 
 namespace XamarinListViewTut.Model
 {
+    //burde nok have kaldt klassen noget andet end "Model". Skulle nok have været med opslittet mellem ViewModel og Model.
+    
+    //klassen arver fra "BaseViewModel", som implementerer "INotifyPropertyChanged". 
+    //Derfor virker alle "Properties" nedenfor med "OnPropertyChanged". 
     class FormelBeregnerModel : BaseViewModel
     {
+        //hver Command kalder en metode
         public ICommand FormelFase1Command => new Command(FormelFase1);
         public ICommand FormelFase2Command => new Command(FormelFase2);
         public ICommand FormelFase3Command => new Command(FormelFase3);
@@ -65,7 +70,7 @@ namespace XamarinListViewTut.Model
                 OnPropertyChanged();
             }
         }
-
+        //lavede denne metode, så jeg ikke skulle skrive den samme linje i samtlige metoder.
         public void KaldVisResultat()        
         {
             VisResultat = $"{UdfyldtFormel} = {Resultat}";             
@@ -74,7 +79,8 @@ namespace XamarinListViewTut.Model
         public void FormelFase1()
         {         
             UdfyldtFormel = $"(5 + {InputX}) / {InputY}";
-            Resultat = (5 + Convert.ToDouble(InputX)) / Convert.ToDouble(InputY);
+            //nødt til at konvertere til double da input fra bruger i XAML er "string".
+            Resultat = (5 + Convert.ToDouble(InputX)) / Convert.ToDouble(InputY); 
             KaldVisResultat();
         }
 

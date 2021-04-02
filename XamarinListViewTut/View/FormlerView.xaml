@@ -11,10 +11,8 @@
         <StackLayout>
             <Label Text="Giv en værdi til X og Y og vælg en Fase" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"></Label>
 
-            
-            <!--<Label Text="Den valgt Fase:" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
-            <Label Text="{Binding Formel}" FontSize="Large" HorizontalTextAlignment="Center"></Label>-->
-
+            <!--var nødt til at lave dette Grid, med flere kolonner, så den kunne
+            vise "Input for ... og brugers input på samme linje"-->
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -32,11 +30,11 @@
                 
             </Grid>
             
+            <!--Alle knapper er bundet til en Command. Hver Command kalder en metode-->
             <Button Text="Fase 1: (5 + X) / Y" Command="{Binding FormelFase1Command}" ></Button>
             <Button Text="Fase 2: PI * X + Y" Command="{Binding FormelFase2Command}" ></Button>
             <Button Text="Fase 3: X opløftet til Y potens" Command="{Binding FormelFase3Command}" ></Button>
 
-            <!--<Button Text="Vis resultat" Command="{Binding DisplayResultCommand}" ></Button>-->
             <Label Text="{Binding VisResultat}" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"> </Label>            
             
             
