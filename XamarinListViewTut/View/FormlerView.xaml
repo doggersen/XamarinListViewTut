@@ -12,8 +12,8 @@
             <Label Text="Vælg en fase!" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"></Label>
 
             <Button Text="Fase 1" Command="{Binding FormelFase1Command}" ></Button>
-            <Button Text="Fase 1" Command="{Binding FormelFase2Command}" ></Button>
-            <Button Text="Fase 1" Command="{Binding FormelFase3Command}" ></Button>
+            <Button Text="Fase 2" Command="{Binding FormelFase2Command}" ></Button>
+            <Button Text="Fase 3" Command="{Binding FormelFase3Command}" ></Button>
             
             <Label Text="Den valgt Fase:" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
             <Label Text="{Binding Formel}" FontSize="Large" HorizontalTextAlignment="Center"></Label>

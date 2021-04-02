@@ -82,28 +82,31 @@ namespace XamarinListViewTut.Model
 
         public void DisplayResult()        
         {
-            FormelFase1();
-            DisplayMessage = $"{UdfyldtFormel} = {Resultat}";   //$"Formel : {Formel} inputtet af x : {InputX}"
-            //                        + $"Resultat : {Resultat.ToString()}";
+            DisplayMessage = $"{UdfyldtFormel} = {Resultat}";             
         }
 
         public void FormelFase1()
-        {
-            
+        {         
             Formel = "(5 + X) / Y";
             UdfyldtFormel = $"(5 + {InputX} / {InputY}";
             Resultat = (5 + Convert.ToDouble(InputX)) / Convert.ToDouble(InputY);
-           // DisplayResult();
+            DisplayResult();
         }
 
         public void FormelFase2()
         {
-
+            Formel = "PI * X + Y";
+            UdfyldtFormel = $"(PI * {InputX} + {InputY}";
+            Resultat = (Math.PI * Convert.ToDouble(InputX)) + Convert.ToDouble(InputY);
+            DisplayResult();
         }
 
         public void FormelFase3()
         {
-
+            Formel = "X opløftet til Y potens";
+            UdfyldtFormel = $"{InputX} opløftet til {InputY}. potens";
+            Resultat = Math.Pow((Convert.ToDouble(InputX)), Convert.ToDouble(InputY));
+            DisplayResult();
         }
     }
 }
