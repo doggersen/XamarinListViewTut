@@ -9,18 +9,36 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Vælg en fase!" FontSize="Large"></Label>
+            <Label Text="Vælg en fase!" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"></Label>
 
-            <Button Text="Fase 1" Command="{Binding FormelFase1Command, Mode=TwoWay}" ></Button>
+            <Button Text="Fase 1" Command="{Binding FormelFase1Command}" ></Button>
             <Button Text="Fase 2"></Button>
             <Button Text="Fase 3"></Button>
-            
-            <Label Text="input for X"></Label>
-            <Entry Text="2"></Entry>
-            <Label Text="input for Y"></Label>
-            <Entry Text=""></Entry>
 
-            <Label Text="{Binding DisplayMessage, Mode=TwoWay}" ></Label>
+            <Label Text="Den valgt Fase:" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+            <Label Text="{Binding Formel}" FontSize="Large" HorizontalTextAlignment="Center"></Label>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                    
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Input for X = " FontAttributes="Bold" FontSize="Medium"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Input for Y = " FontAttributes="Bold" FontSize="Medium"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding InputX}" FontAttributes="Bold" FontSize="Medium" BackgroundColor="AntiqueWhite"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding InputY}" FontAttributes="Bold" FontSize="Medium" BackgroundColor="AntiqueWhite"/>
+                
+            </Grid>
+
+
+            <Button Text="Vis resultat!"></Button>
+            <Label Text="Resultat skal stå her"></Label>            
+            
             
         </StackLayout>
     </ContentPage.Content>

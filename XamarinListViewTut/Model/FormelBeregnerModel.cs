@@ -9,23 +9,55 @@ namespace XamarinListViewTut.Model
     class FormelBeregnerModel : BaseViewModel
     {
         public ICommand FormelFase1Command => new Command(FormelFase1);
+        public ICommand FormelFase2Command => new Command(FormelFase2);
+        public ICommand FormelFase3Command => new Command(FormelFase3);
+        public ICommand DisplayResultCommand => new Command(DisplayResult);
 
-        public string Formel { get; set; }
-        public double InputX { get; set; }
-        //{
-        //    get
-        //    {
-        //        return Convert.ToString InputX.ToString();
-        //    }
 
-        //    set
-        //    {
 
-        //        InputX = Convert.ToDouble(value);
-        //    }
-        //}
+        private string _formel;
+        public string Formel
+        {
+            get { return _formel; }
+            set
+            {
+                _formel = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public double InputY { get; set; }
+        private string _udfyldtFormel;
+        public string UdfyldtFormel
+        {
+            get { return _udfyldtFormel; }
+            set
+            {
+                _udfyldtFormel = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private double _inputX;
+        public double InputX
+        {
+            get { return _inputX; }
+            set
+            {
+                _inputX = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private double _inputY;
+        public double InputY
+        {
+            get { return _inputY; }
+            set
+            {
+                _inputY = value;
+                OnPropertyChanged();
+            }
+        }
         public double Resultat { get; set; }
 
         private string _displayMessage;
@@ -39,40 +71,27 @@ namespace XamarinListViewTut.Model
             }
         }
 
-
-
-        public void Submit()
+        public void DisplayResult()        
         {
-            DisplayMessage = $"Formel : {Formel} inputtet af x : {InputX}"
-                                    + $"Resultat : {Resultat.ToString()}";
-        }
-
-        public void TestFunktion()
-        {
-
+            DisplayMessage = $"{UdfyldtFormel} = {Resultat}";   //$"Formel : {Formel} inputtet af x : {InputX}"
+            //                        + $"Resultat : {Resultat.ToString()}";
         }
 
         public void FormelFase1()
         {
+            
             Formel = "(5 + X) / Y";
-            Resultat = (5 + InputX) / 2;
-            Submit();
+            UdfyldtFormel = $"(5 + {InputX} / {InputY}";
+            Resultat = (5 + Convert.ToDouble(InputX)) / InputY;
+            DisplayResult();
         }
 
-        //public void FormelFase1 (double inputX = 0, double inputY = 0)
-        //{
-        //    inputX = InputX;
-        //    inputY = InputY;
-        //    Formel = "(5 + X) / Y";
-        //    Resultat = (5 + inputX) / inputY;
-        //}
-
-        public void FormelFase2(double inputX, double inputY)
+        public void FormelFase2()
         {
 
         }
 
-        public void FormelFase3(double inputX, double inputY)
+        public void FormelFase3()
         {
 
         }
