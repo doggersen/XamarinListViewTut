@@ -7,6 +7,7 @@
     <ContentPage.BindingContext>
         <local:PlayerListViewModel/>
     </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout>
 
@@ -33,7 +34,7 @@
 
                         </ViewCell>
                     </DataTemplate>
-                </ListView.ItemTemplate>
+               </ListView.ItemTemplate>
 
             </ListView>
 

@@ -16,5 +16,10 @@ namespace XamarinListViewTut
         {
             InitializeComponent();
         }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddOrEditAdvancedEmployeePage());
+        }
     }
 }

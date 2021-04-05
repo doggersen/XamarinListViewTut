@@ -20,5 +20,11 @@ namespace XamarinListViewTut
             PictureUrl = pictureUrl;
             CivilStatus = civilStatus;
         }
+
+        //with this second constructor the above arguments are no longer required when creating a new Employee object
+        public Employee()
+        {
+
+        }
     }
 }
