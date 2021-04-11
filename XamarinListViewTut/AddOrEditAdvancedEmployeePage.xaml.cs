@@ -12,7 +12,7 @@ namespace XamarinListViewTut
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddOrEditAdvancedEmployeePage : ContentPage
     {
-        public AddOrEditAdvancedEmployeePage()
+        public AddOrEditAdvancedEmployeePage(Employee employee = null)
         {
             InitializeComponent();
         }

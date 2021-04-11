@@ -23,8 +23,13 @@ namespace XamarinListViewTut
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
 
+        {
+            TappedEventArgs tappedEventArgs = (TappedEventArgs)e;
+
+            Employee employee = ((EmployeeListViewModel)BindingContext).Employees.Where(emp => emp.EmployeeId == (int)tappedEventArgs.Parameter).FirstOrDefault();
+
+            Navigation.PushAsync(new AddOrEditAdvancedEmployeePage());
         }
     }
 }
