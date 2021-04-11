@@ -22,6 +22,13 @@ namespace XamarinListViewTut
             //making a variable called "employee" of type "Employee", and assigning it ....to what exactly?
             Employee employee = ((AddOrEditAdvancedEmployeeViewModel)BindingContext).Employee;
 
+            if (employee.EmployeeId == 0)
+            {
+                employee.PictureUrl = "img7.jpg";
+            }
+
+            MessagingCenter.Send(this, "AddOrEditAdvancedEmployee", employee);
+
             Navigation.PopAsync();
         }
     }

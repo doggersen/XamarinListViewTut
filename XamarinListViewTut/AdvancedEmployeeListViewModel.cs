@@ -29,10 +29,6 @@ namespace XamarinListViewTut
             //string[] arrEmployees = new string[] { "batman", "superman", "wonderwoman" }; (sådan havde den normalt set ud hvis vi ikke brugte observablecollection)
             Employees = new ObservableCollection<Employee>();
 
-            //Employees.Add("batman");
-            //Employees.Add("wonderwoman");
-            //Employees.Add("superman");
-
             Employees.Add(new Employee(1, "Finn Hansen", "Infrastructure", "img1.jpg", "single"));
             Employees.Add(new Employee(2, "Tom Cruise", "Fliselægger", "img2.jpg", "married"));
             Employees.Add(new Employee(3, "Pia Poulsen", "Administrationen", "img3.jpg", "single"));
@@ -40,7 +36,23 @@ namespace XamarinListViewTut
             Employees.Add(new Employee(5, "Ole B", "Bossen", "img5.jpg", "single"));
             Employees.Add(new Employee(6, "Jørgen Mondrup", "Infrastructure", "img6.jpg", "married"));
 
-        }
+            MessagingCenter.Subscribe<AddOrEditAdvancedEmployeePage, Employee>(this, "AddOrEditAdvancedEmployee",
+                (page, employee) =>
+                {
+                    if(employee.EmployeeId == 0)
+                    {
+
+                        employee.EmployeeId = Employees.Count + 1;
+                        Employees.Add(employee);
+
+                    }
+
+                    
+                }
+
+                );
+
+        } 
 
         public void AddEmployee()
         {

@@ -39,7 +39,12 @@
                                 
                                 <Label Text="{Binding Designation}" Grid.Column="1" VerticalTextAlignment="End"></Label>
 
-                                <Image Source="edit.png" Grid.Column="2"></Image>
+                                <Image Source="edit.png" Grid.Column="2">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                
 
                                 <Image Source="trash.png" Grid.Column="3"></Image>
 

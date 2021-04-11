@@ -21,5 +21,10 @@ namespace XamarinListViewTut
         {
             Navigation.PushAsync(new AddOrEditAdvancedEmployeePage());
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+
+        }
     }
 }
